@@ -1,6 +1,6 @@
 import os
 
-CHUNK_SIZE = 1000
+CHUNK_SIZE = 500
 CHUNK_OVERLAP = 150
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -11,7 +11,10 @@ EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
 VECTOR_DB_DIR = os.path.join(DATA_DIR, "chroma_db")
 
-RETRIEVAL_K = 3
+LLM_MODEL_NAME = "llama3.2:1b"
+OLLAMA_BASE_URL = "http://host.docker.internal:11434"
+
+RETRIEVAL_K = 2
 
 PROMPT_TEMPLATE = """You are an assistant that helps answer
                     questions based on the following document
@@ -29,5 +32,3 @@ QUESTION:
 
 ANSWER:
 """
-
-#
